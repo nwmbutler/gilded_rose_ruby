@@ -4,7 +4,7 @@ require './lib/item'
 describe GildedRose do
 
   describe "#normal" do
-    it "reduces @sell_in and @quality by 1" do
+    it "reduces @quality by 1 and @sell_in by 1 " do
       items = Item.new('normal', 10, 4)
       gil_rose = GildedRose.new(items)
       gil_rose.normal

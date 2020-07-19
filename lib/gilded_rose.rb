@@ -6,7 +6,7 @@ class GildedRose
   SULFURAS = "Sulfuras, Hand of Ragnaros"
   NORMAL = "normal"
 
-  def initialize(items)
+  def initialize(items) # "#{@name}, #{@sell_in}, #{@quality}"
     @items = items
   end
 
