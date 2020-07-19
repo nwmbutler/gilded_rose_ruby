@@ -23,7 +23,8 @@ class GildedRose
 
   def normal
     items.sell_in -= 1
-    return if items.quality == 0
+    return if items.quality.zero?
+
     items.quality -= 1
     items.quality -= 1 if items.sell_in <= 0
   end
@@ -31,20 +32,19 @@ class GildedRose
   def aged_brie
     items.sell_in -= 1
     return if items.quality == 50
+
     items.quality += 1
   end
 
   def backstage_pass
-   if items.sell_in <= 0
-     items.quality = 0
-     items.sell_in -= 1
-   elsif items.sell_in <= 5
-     items.quality += 3
-     items.sell_in -= 1
-   elsif items.sell_in <= 10
-     items.quality += 2
-     items.sell_in -= 1
-   end
+    items.sell_in -= 1
+    if items.sell_in <= 0
+      items.quality = 0
+    elsif items.sell_in <= 5
+      items.quality += 3
+    elsif items.sell_in <= 10
+      items.quality += 2
+    end
   end
 
   def sulfuras
